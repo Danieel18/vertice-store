@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vértice Store — camisas, calçados e acessórios.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Vértice Store | Moda urbana</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Vértice Store - início">VÉRTICE<span>.</span></a>
+
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="searchBtn" type="button" aria-label="Pesquisar">⌕</button>
+        <button class="icon-btn cart-btn" id="cartBtn" type="button" aria-label="Abrir carrinho">
+          🛒 <span id="cartCount" class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="search-panel container" id="searchPanel" hidden>
+      <label for="searchInput">Buscar produtos</label>
+      <div class="search-row">
+        <input id="searchInput" type="search" maxlength="80" autocomplete="off" placeholder="Ex.: tênis branco">
+        <button class="btn btn-primary" id="searchApply" type="button">Buscar</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">NOVA COLEÇÃO 2026</span>
+          <h1>Seu estilo.<br><span>Seu movimento.</span></h1>
+          <p>Camisas, calçados e peças selecionadas para quem quer conforto sem abrir mão de personalidade.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#produtos">Comprar agora</a>
+            <a class="btn btn-ghost" href="#categorias">Explorar categorias</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="hero-shoe">👟</div>
+          <div class="hero-badge">DROP<br><strong>01</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="categorias">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">EXPLORE</span>
+            <h2>Escolha seu estilo</h2>
+          </div>
+          <p>Encontre peças para o dia a dia, treino e momentos especiais.</p>
+        </div>
+        <div class="category-grid">
+          <button class="category-card" data-category="Camisas" type="button">
+            <span class="category-icon">👕</span><strong>Camisas</strong><small>Estilo e conforto</small>
+          </button>
+          <button class="category-card" data-category="Calçados" type="button">
+            <span class="category-icon">👟</span><strong>Calçados</strong><small>Performance e lifestyle</small>
+          </button>
+          <button class="category-card" data-category="Acessórios" type="button">
+            <span class="category-icon">🧢</span><strong>Acessórios</strong><small>Detalhes que completam</small>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="produtos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">CATÁLOGO</span>
+            <h2>Mais procurados</h2>
+          </div>
+          <div class="filters">
+            <select id="categoryFilter" aria-label="Filtrar por categoria">
+              <option value="Todos">Todas as categorias</option>
+              <option value="Camisas">Camisas</option>
+              <option value="Calçados">Calçados</option>
+              <option value="Acessórios">Acessórios</option>
+            </select>
+            <select id="sortFilter" aria-label="Ordenar produtos">
+              <option value="featured">Destaques</option>
+              <option value="price-asc">Menor preço</option>
+              <option value="price-desc">Maior preço</option>
+              <option value="name">Nome</option>
+            </select>
+          </div>
+        </div>
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        <p class="empty-state" id="emptyState" hidden>Nenhum produto encontrado.</p>
+      </div>
+    </section>
+
+    <section class="section promo-section">
+      <div class="container promo">
+        <div>
+          <span class="eyebrow">PRIMEIRA COMPRA</span>
+          <h2>10% OFF no seu primeiro pedido</h2>
+          <p>Use o cupom <strong>VERTICE10</strong> no carrinho.</p>
+        </div>
+        <button class="btn btn-light" id="copyCoupon" type="button">Copiar cupom</button>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container about-grid">
+        <div>
+          <span class="eyebrow">A VÉRTICE</span>
+          <h2>Moda simples, identidade forte.</h2>
+        </div>
+        <div>
+          <p>A Vértice é uma loja demonstrativa criada para servir como base de um e-commerce moderno. O projeto prioriza organização, responsividade, acessibilidade e uma arquitetura preparada para evoluir.</p>
+          <div class="trust-grid">
+            <div><strong>01</strong><span>Catálogo organizado</span></div>
+            <div><strong>02</strong><span>Carrinho persistente</span></div>
+            <div><strong>03</strong><span>Checkout preparado</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contato">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">FALE CONOSCO</span><h2>Entre em contato</h2></div>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-grid">
+            <label>Nome<input id="contactName" name="name" maxlength="80" required></label>
+            <label>E-mail<input id="contactEmail" name="email" type="email" maxlength="120" required></label>
+          </div>
+          <label>Mensagem<textarea id="contactMessage" name="message" maxlength="1000" rows="5" required></textarea></label>
+          <button class="btn btn-primary" type="submit">Enviar mensagem</button>
+          <p class="form-feedback" id="contactFeedback" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><a class="logo" href="index.html" aria-label="Vértice Store — início">VÉRTICE<span>.</span></a><p>Moda urbana para todos os movimentos.</p></div>
+      <div><strong>Atendimento</strong><a href="#contato">Contato</a><a href="#">Trocas e devoluções</a><a href="#">Privacidade</a></div>
+      <div><strong>Redes</strong><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">YouTube</a></div>
+    </div>
+    <div class="container footer-bottom">© 2026 Vértice Store. Projeto demonstrativo.</div>
+  </footer>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho" aria-hidden="true">
+    <div class="drawer-head"><h2>Seu carrinho</h2><button class="icon-btn" id="closeCart" type="button" aria-label="Fechar carrinho">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-summary">
+      <div><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div>
+      <div><span>Desconto</span><strong id="cartDiscount">R$ 0,00</strong></div>
+      <div class="total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <div class="coupon-row"><input id="couponInput" maxlength="20" placeholder="Cupom…" aria-label="Código do cupom"><button class="btn btn-dark" id="applyCoupon" type="button">Aplicar</button></div>
+      <button class="btn btn-primary btn-full" id="checkoutBtn" type="button">Ir para checkout</button>
+      <p class="security-note">🔒 Checkout demonstrativo. Nenhum dado de cartão é armazenado neste projeto.</p>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay" hidden></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="data/products.js"></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

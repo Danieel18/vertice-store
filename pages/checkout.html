@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Checkout | Vértice Store</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="checkout-page">
+  <a class="skip-link" href="#checkoutForm">Pular para o formulário</a>
+<header class="site-header"><div class="container header-inner"><a class="logo" href="../index.html" aria-label="Vértice Store — início">VÉRTICE<span>.</span></a><span class="checkout-secure">🔒 Compra segura — demonstração</span></div></header>
+<main class="section"><div class="container checkout-grid">
+  <section>
+    <span class="eyebrow">CHECKOUT</span><h1>Finalizar pedido</h1>
+    <div id="checkoutEmpty" class="notice" hidden>Seu carrinho está vazio. <a href="../index.html#produtos">Voltar para produtos</a></div>
+    <form id="checkoutForm" class="checkout-form" novalidate>
+      <h2>Dados de entrega</h2>
+      <div class="form-grid">
+        <label>Nome completo<input name="name" maxlength="100" autocomplete="name" required></label>
+        <label>E-mail<input name="email" type="email" maxlength="120" autocomplete="email" required></label>
+      </div>
+      <div class="form-grid">
+        <label>CEP<input name="zip" inputmode="numeric" maxlength="9" autocomplete="postal-code" required></label>
+        <label>Cidade<input name="city" maxlength="80" autocomplete="address-level2" required></label>
+      </div>
+      <label>Endereço<input name="address" maxlength="150" autocomplete="street-address" required></label>
+      <div class="form-grid three">
+        <label>Número<input name="number" maxlength="10" required></label>
+        <label>Estado<input name="state" maxlength="2" required></label>
+        <label>Complemento<input name="complement" maxlength="80"></label>
+      </div>
+      <h2>Pagamento</h2>
+      <div class="notice">Nesta versão front-end, o pagamento é apenas simulado. Para produção, integre um gateway/tokenizador e <strong>nunca</strong> salve dados brutos de cartão no navegador ou no seu banco.</div>
+      <label>Forma de pagamento<select name="payment" required><option value="">Selecione</option><option>PIX (simulação)</option><option>Cartão (simulação)</option><option>Boleto (simulação)</option></select></label>
+      <button class="btn btn-primary btn-full" type="submit">Confirmar pedido demonstrativo</button>
+      <p id="checkoutFeedback" class="form-feedback" role="status"></p>
+    </form>
+  </section>
+  <aside class="order-box" aria-label="Resumo do pedido"><h2>Resumo</h2><div id="checkoutSummary"></div><div class="order-total"><span>Total</span><strong id="checkoutTotal">R$ 0,00</strong></div></aside>
+</div></main>
+<script src="../data/products.js"></script>
+<script src="../assets/js/checkout.js" defer></script>
+</body>
+</html>
